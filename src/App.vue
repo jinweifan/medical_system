@@ -5,23 +5,15 @@
       <div class="header-left">
         <h1 class="dashboard-title">鹿鸣春舍智慧养老中心</h1>
         <nav class="header-nav">
-          <a href="#" class="nav-item active">综合数据</a>
+          <a href="#" class="nav-item active">系统管理</a>
           <a href="#" class="nav-item">信息管理</a>
-          <a href="#" class="nav-item">社区养老</a>
-          <a href="#" class="nav-item">健康管理</a>
-          <a href="#" class="nav-item">系统设置</a>
+          <a href="#" class="nav-item">膳食管理</a>
+          <a href="#" class="nav-item">护理管理</a>
+          <a href="#" class="nav-item">床位管理</a>
+          <a href="#" class="nav-item">后勤管理</a>
+          <a href="#" class="nav-item">费用管理</a>
         </nav>
       </div>
-      <!-- <div class="header-right">
-        <div class="weather-info">
-          <span class="weather-icon">{{ weatherInfo.icon }}</span>
-          <span>{{ weatherInfo.text }} {{ temperature }}</span>
-        </div>
-        <div class="time-info">
-          <span class="time">{{ currentTime }}</span>
-          <span class="date">{{ currentDate }}</span>
-        </div>
-      </div> -->
     </header>
 
     <!-- 主体区域 -->
@@ -30,17 +22,7 @@
         <div class="top-content">
           <div class="top-left">
             <div class="info-row">
-              <div class="time-display">
-                <span class="time-text">{{ currentTime }}</span>
-                <span class="date-text">{{ currentDate }}</span>
-              </div>
-              <div class="weather-info">
-                <span class="weather-icon">{{ weatherInfo.icon }}</span>
-                <div class="weather-details">
-                  <span class="weather-text">{{ weatherInfo.text }} {{ temperature }}</span>
-                  <span class="weather-wind">{{ weatherInfo.wind }}</span>
-                </div>
-              </div>
+              <span class="datetime-text">{{ currentDate }} {{ currentTime }}</span>
             </div>
           </div>
           <div class="top-center">
@@ -48,62 +30,69 @@
           </div>
         </div>
       </section>
-      
+
       <section class="dashboard-middle">
         <div class="middle-left">
           <div class="data-overview">
             <div class="total-elderly">
               <div class="total-label">养老人数总数</div>
               <div class="total-value">
-                <span class="digit-box">1</span>
-                <span class="comma">,</span>
+                <span class="digit-box">0</span>
                 <span class="digit-box">2</span>
-                <span class="digit-box">1</span>
-                <span class="digit-box">0</span>
-                <span class="comma">,</span>
-                <span class="digit-box">0</span>
-                <span class="digit-box">0</span>
+                <span class="digit-box">3</span>
                 <span class="digit-box">0</span>
               </div>
             </div>
             <div class="age-groups">
               <div class="age-item">
                 <div class="age-label">60-70岁老人</div>
-                <div class="age-value">45,764</div>
+                <div class="age-value">
+                  <span class="digit-box">0</span>
+                  <span class="digit-box">5</span>
+                  <span class="digit-box">6</span>
+                </div>
               </div>
               <div class="age-item">
                 <div class="age-label">71-80岁老人</div>
-                <div class="age-value">45,764</div>
+                <div class="age-value">
+                  <span class="digit-box">0</span>
+                  <span class="digit-box">8</span>
+                  <span class="digit-box">2</span>
+                </div>
               </div>
               <div class="age-item">
                 <div class="age-label">80岁以上老人</div>
-                <div class="age-value">45,764</div>
+                <div class="age-value">
+                  <span class="digit-box">0</span>
+                  <span class="digit-box">4</span>
+                  <span class="digit-box">9</span>
+                </div>
               </div>
             </div>
             <div class="stats-grid">
               <div class="stats-item">
-                <div class="stats-label">居家养老人数</div>
-                <div class="stats-value">11,654</div>
+                <div class="stats-label">今日入住人数</div>
+                <div class="stats-value">11</div>
               </div>
               <div class="stats-item">
-                <div class="stats-label">社区居家养老人数</div>
-                <div class="stats-value">234,456</div>
+                <div class="stats-label">今日离开人数</div>
+                <div class="stats-value">8</div>
               </div>
               <div class="stats-item">
-                <div class="stats-label">机构养老人数</div>
-                <div class="stats-value">36,567</div>
+                <div class="stats-label">常驻床位数量</div>
+                <div class="stats-value">204</div>
               </div>
               <div class="stats-item">
-                <div class="stats-label">养老机构数</div>
-                <div class="stats-value">1,678</div>
+                <div class="stats-label">剩余床位数量</div>
+                <div class="stats-value">180</div>
               </div>
               <div class="stats-item">
-                <div class="stats-label">服务人数</div>
-                <div class="stats-value">34,345</div>
+                <div class="stats-label">护理服务人数</div>
+                <div class="stats-value">75</div>
               </div>
               <div class="stats-item">
-                <div class="stats-label">服务商数</div>
-                <div class="stats-value">57,567</div>
+                <div class="stats-label">续费提醒</div>
+                <div class="stats-value">16</div>
               </div>
             </div>
           </div>
@@ -115,45 +104,37 @@
         </div>
         <div class="middle-right">
           <h3 class="panel-title">老年人年龄占比</h3>
-          <div id="age-chart" class="age-chart">
+          <div id="age-chart" class="pie-chart">
           </div>
         </div>
       </section>
-      
+
       <section class="dashboard-bottom">
-        <div class="bottom-charts">
-          <div class="chart-item">
-            <h3 class="panel-title">居家养老分布</h3>
+          <div class="bottom-left">
+            <h3 class="panel-title">本月护理项目占比</h3>
             <div id="home-care-chart" class="care-chart"></div>
           </div>
-          <div class="chart-item">
-            <h3 class="panel-title">社区养老分布</h3>
+          <div class="bottom-center">
+            <h3 class="panel-title">客户入住趋势分析</h3>
             <div id="community-care-chart" class="care-chart"></div>
           </div>
-          <div class="chart-item">
-            <h3 class="panel-title">机构养老分布</h3>
+          <div class="bottom-right">
+            <h3 class="panel-title">健康统计</h3>
             <div id="institution-care-chart" class="care-chart"></div>
           </div>
-        </div>
       </section>
     </main>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import * as echarts from 'echarts'
 import chinaMapData from './assets/chengduMap.json'
 
 // 时间日期相关
 const currentTime = ref('')
 const currentDate = ref('')
-const temperature = ref('-2℃~0℃')
-const weatherInfo = ref({
-  icon: '❄️',
-  text: '多云',
-  wind: '北风2级 6m/s'
-})
 
 const updateDateTime = () => {
   const now = new Date()
@@ -163,15 +144,15 @@ const updateDateTime = () => {
   const hours = String(now.getHours()).padStart(2, '0')
   const minutes = String(now.getMinutes()).padStart(2, '0')
   const seconds = String(now.getSeconds()).padStart(2, '0')
-  
+
   currentTime.value = `${hours}:${minutes}:${seconds}`
   currentDate.value = `${year}年 ${month}月 ${day}日`
 }
 
 // 初始化地图
 const initMap = () => {
-  echarts.registerMap('china', chinaMapData)
   const mapChart = echarts.init(document.getElementById('map'))
+  echarts.registerMap('china', chinaMapData)
   const option = {
     backgroundColor: 'transparent',
     geo: {
@@ -227,22 +208,22 @@ const initMap = () => {
       type: 'effectScatter',
       coordinateSystem: 'geo',
       data: [
-        {name: '成华区养老中心', value: [104.101, 30.660, 20], symbol: 'circle'},
-        {name: '武侯区颐养院', value: [104.043, 30.641, 18], symbol: 'circle'},
-        {name: '锦江区养老院', value: [104.080, 30.657, 15], symbol: 'circle'},
-        {name: '青羊区养老中心', value: [104.062, 30.674, 16], symbol: 'circle'},
-        {name: '金牛区颐养院', value: [104.052, 30.691, 17], symbol: 'circle'},
-        {name: '高新区养老院', value: [104.065, 30.621, 14], symbol: 'circle'},
-        {name: '温江区养老中心', value: [103.856, 30.682, 12], symbol: 'circle'},
-        {name: '双流区颐养院', value: [103.923, 30.574, 13], symbol: 'circle'},
-        {name: '新都区养老院', value: [104.158, 30.823, 16], symbol: 'circle'},
-        {name: '郫都区颐养院', value: [103.901, 30.795, 15], symbol: 'circle'},
-        {name: '龙泉驿区养老中心', value: [104.274, 30.556, 14], symbol: 'circle'},
-        {name: '青白江区养老院', value: [104.251, 30.878, 13], symbol: 'circle'},
-        {name: '简阳市养老中心', value: [104.547, 30.411, 12], symbol: 'circle'},
-        {name: '都江堰市养老院', value: [103.647, 30.988, 11], symbol: 'circle'},
-        {name: '彭州市颐养院', value: [103.958, 30.990, 10], symbol: 'circle'},
-        {name: '邛崃市养老中心', value: [103.464, 30.410, 9], symbol: 'circle'}
+        { name: '成华区养老中心', value: [104.101, 30.660, 20], symbol: 'circle' },
+        { name: '武侯区颐养院', value: [104.043, 30.641, 18], symbol: 'circle' },
+        { name: '锦江区养老院', value: [104.080, 30.657, 15], symbol: 'circle' },
+        { name: '青羊区养老中心', value: [104.062, 30.674, 16], symbol: 'circle' },
+        { name: '金牛区颐养院', value: [104.052, 30.691, 17], symbol: 'circle' },
+        { name: '高新区养老院', value: [104.065, 30.621, 14], symbol: 'circle' },
+        { name: '温江区养老中心', value: [103.856, 30.682, 12], symbol: 'circle' },
+        { name: '双流区颐养院', value: [103.923, 30.574, 13], symbol: 'circle' },
+        { name: '新都区养老院', value: [104.158, 30.823, 16], symbol: 'circle' },
+        { name: '郫都区颐养院', value: [103.901, 30.795, 15], symbol: 'circle' },
+        { name: '龙泉驿区养老中心', value: [104.274, 30.556, 14], symbol: 'circle' },
+        { name: '青白江区养老院', value: [104.251, 30.878, 13], symbol: 'circle' },
+        { name: '简阳市养老中心', value: [104.547, 30.411, 12], symbol: 'circle' },
+        { name: '都江堰市养老院', value: [103.647, 30.988, 11], symbol: 'circle' },
+        { name: '彭州市颐养院', value: [103.958, 30.990, 10], symbol: 'circle' },
+        { name: '邛崃市养老中心', value: [103.464, 30.410, 9], symbol: 'circle' }
       ],
       symbolSize: 14,
       showEffectOn: 'render',
@@ -288,251 +269,480 @@ const initMap = () => {
 }
 
 // 初始化年龄占比图
-const initCareCharts = () => {
-  // 居家养老分布图表
-  const homeCareChart = echarts.init(document.getElementById('home-care-chart'))
-  const homeCareOption = {
-    backgroundColor: 'transparent',
-    tooltip: {
-      trigger: 'item',
-      backgroundColor: 'rgba(0, 21, 41, 0.9)',
-      borderColor: 'rgba(24, 144, 255, 0.3)',
-      textStyle: { color: '#fff' }
-    },
-    legend: {
-      orient: 'horizontal',
-      bottom: '0',
-      left: 'center',
-      itemWidth: 10,
-      itemHeight: 10,
-      itemGap: 20,
-      textStyle: { 
-        color: 'rgba(255, 255, 255, 0.85)',
-        fontSize: 12
-      }
-    },
-    color: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CDEF'],
-    series: [{
-      name: '居家养老',
-      type: 'pie',
-      radius: ['50%', '70%'],
-      center: ['40%', '50%'],
-      avoidLabelOverlap: false,
-      label: {
-        show: true,
-        position: 'inside',
-        formatter: '{d}%',
-        color: '#fff',
-        fontSize: 12,
-        fontWeight: 'bold'
-      },
-      labelLine: {
-        show: true,
-        lineStyle: { color: 'rgba(255,255,255,0.3)' }
-      },
-      data: [
-        {value: 4500, name: '专人照护'},
-        {value: 3200, name: '居家服务'},
-        {value: 2100, name: '远程看护'},
-        {value: 1854, name: '其他服务'}
-      ]
-    }]
-  }
-  homeCareChart.setOption(homeCareOption)
-
-  // 社区养老分布图表
-  const communityCareChart = echarts.init(document.getElementById('community-care-chart'))
-  const communityCareOption = {
-    backgroundColor: 'transparent',
-    tooltip: {
-      trigger: 'item',
-      backgroundColor: 'rgba(0, 21, 41, 0.9)',
-      borderColor: 'rgba(24, 144, 255, 0.3)',
-      textStyle: { color: '#fff' }
-    },
-    legend: {
-      orient: 'horizontal',
-      bottom: '0',
-      left: 'center',
-      itemWidth: 10,
-      itemHeight: 10,
-      itemGap: 20,
-      textStyle: { 
-        color: 'rgba(255, 255, 255, 0.85)',
-        fontSize: 12
-      }
-    },
-    color: ['#36CFC9', '#73D13D', '#FFC53D', '#FF7A45'],
-    series: [{
-      name: '社区养老',
-      type: 'pie',
-      radius: ['50%', '70%'],
-      center: ['40%', '50%'],
-      avoidLabelOverlap: false,
-      label: {
-        show: true,
-        position: 'inside',
-        formatter: '{d}%',
-        color: '#fff',
-        fontSize: 12,
-        fontWeight: 'bold'
-      },
-      labelLine: {
-        show: true,
-        lineStyle: { color: 'rgba(255,255,255,0.3)' }
-      },
-      data: [
-        {value: 95000, name: '日间照料'},
-        {value: 68000, name: '文娱活动'},
-        {value: 45000, name: '健康管理'},
-        {value: 26456, name: '其他服务'}
-      ]
-    }]
-  }
-  communityCareChart.setOption(communityCareOption)
-
-  // 机构养老分布图表
-  const institutionCareChart = echarts.init(document.getElementById('institution-care-chart'))
-  const institutionCareOption = {
-    backgroundColor: 'transparent',
-    tooltip: {
-      trigger: 'item',
-      backgroundColor: 'rgba(0, 21, 41, 0.9)',
-      borderColor: 'rgba(24, 144, 255, 0.3)',
-      textStyle: { color: '#fff' }
-    },
-    legend: {
-      orient: 'horizontal',
-      bottom: '0',
-      left: 'center',
-      itemWidth: 10,
-      itemHeight: 10,
-      itemGap: 20,
-      textStyle: { 
-        color: 'rgba(255, 255, 255, 0.85)',
-        fontSize: 12
-      }
-    },
-    color: ['#597EF7', '#9254DE', '#F759AB', '#FF4D4F'],
-    series: [{
-      name: '机构养老',
-      type: 'pie',
-      radius: ['50%', '70%'],
-      center: ['40%', '50%'],
-      avoidLabelOverlap: false,
-      label: {
-        show: true,
-        position: 'inside',
-        formatter: '{d}%',
-        color: '#fff',
-        fontSize: 12,
-        fontWeight: 'bold'
-      },
-      labelLine: {
-        show: true,
-        lineStyle: { color: 'rgba(255,255,255,0.3)' }
-      },
-      data: [
-        {value: 15000, name: '全托养老'},
-        {value: 12000, name: '医养结合'},
-        {value: 8000, name: '专护养老'},
-        {value: 1567, name: '其他服务'}
-      ]
-    }]
-  }
-  institutionCareChart.setOption(institutionCareOption)
-}
-
 const initAgeChart = () => {
   const ageChart = echarts.init(document.getElementById('age-chart'))
   const option = {
     backgroundColor: 'transparent',
     tooltip: {
       trigger: 'item',
+      formatter: '{b}: {d}%',
       backgroundColor: 'rgba(0, 21, 41, 0.9)',
       borderColor: 'rgba(24, 144, 255, 0.3)',
-      textStyle: {
-        color: '#fff'
-      }
+      textStyle: { color: '#fff' }
     },
     legend: {
-      orient: 'vertical',
-      right: '40%',
-      top: 'center',
+      orient: 'horizontal',
+      bottom: '0',
+      left: 'center',
+      itemGap: 15,
       itemWidth: 10,
       itemHeight: 10,
       textStyle: {
-        color: 'rgba(255, 255, 255, 0.85)',
-        fontSize: 12
-      },
-      itemStyle: {
-        borderWidth: 0
+        color: 'rgba(255, 255, 255, 0.65)',
+        fontSize: 14
       }
     },
-    color: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CDEF'],
+    color: ['#FF6B6B', '#FFD93D', '#4ECDC4', '#45B7D1', '#6C5CE7'],
     series: [{
       name: '年龄占比',
       type: 'pie',
-      radius: ['50%', '70%'],
-      avoidLabelOverlap: false,
+      radius: ['40%', '60%'],
+      center: ['50%', '42%'],
+      avoidLabelOverlap: true,
+      itemStyle: {
+        borderColor: 'rgba(0, 21, 41, 0.4)',
+        borderWidth: 2
+      },
       label: {
         show: true,
-        position: 'inside',
-        formatter: '{d}%',
-        color: '#fff',
+        position: 'outside',
+        formatter: '{b}\n{d}%',
         fontSize: 12,
-        fontWeight: 'bold'
+        color: '#fff',
+        lineHeight: 16,
+        alignTo: 'edge',
+        edgeDistance: '15%',
+        distanceToLabelLine: 10,
+        overflow: 'none'
+      },
+      labelLayout: {
+        hideOverlap: false,
+        moveOverlap: 'shiftY'
       },
       labelLine: {
         show: true,
+        length: 25,
+        length2: 50,
+        minTurnAngle: 90,
+        smooth: 0.2,
         lineStyle: {
-          color: 'rgba(255,255,255,0.3)'
+          width: 1.5,
+          type: 'solid'
         }
       },
       data: [
-        {value: 35, name: '60-69岁'},
-        {value: 30, name: '70-79岁'},
-        {value: 25, name: '80-89岁'},
-        {value: 10, name: '90岁以上'}
+        { 
+          value: 25, 
+          name: '60-69岁',
+          itemStyle: { color: '#FF6B6B' },
+          labelLine: { lineStyle: { color: '#FF6B6B' } }
+        },
+        { 
+          value: 40, 
+          name: '70-79岁',
+          itemStyle: { color: '#FFD93D' },
+          labelLine: { lineStyle: { color: '#FFD93D' } }
+        },
+        { 
+          value: 18, 
+          name: '80-89岁',
+          itemStyle: { color: '#4ECDC4' },
+          labelLine: { lineStyle: { color: '#4ECDC4' } }
+        },
+        { 
+          value: 10, 
+          name: '90-99岁',
+          itemStyle: { color: '#45B7D1' },
+          labelLine: { lineStyle: { color: '#45B7D1' } }
+        },
+        { 
+          value: 7, 
+          name: '100岁以上',
+          itemStyle: { color: '#6C5CE7' },
+          labelLine: { lineStyle: { color: '#6C5CE7' } }
+        }
       ]
     }]
   }
   ageChart.setOption(option)
 }
 
+// 初始化养老分布图表
+const initCareCharts = () => {
+  // 护理项目占比
+  const homeCareChart = echarts.init(document.getElementById('home-care-chart'))
+  const homeCareOption = {
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'item',
+      formatter: '{b}: {d}%',
+      backgroundColor: 'rgba(0, 21, 41, 0.9)',
+      borderColor: 'rgba(24, 144, 255, 0.3)',
+      textStyle: { color: '#fff' }
+    },
+    legend: {
+      orient: 'horizontal',
+      bottom: '0',
+      left: 'center',
+      itemGap: 15,
+      itemWidth: 15,
+      itemHeight: 10,
+      textStyle: {
+        color: 'rgba(255, 255, 255, 0.65)',
+        fontSize: 14
+      }
+    },
+    color: ['#FF9F43', '#FFD93D', '#4ECDC4', '#45B7D1', '#6C5CE7', '#FF6B6B'],
+    series: [{
+      name: '护理项目',
+      type: 'pie',
+      radius: ['45%', '60%'],
+      center: ['50%', '42%'],
+      avoidLabelOverlap: true,
+      itemStyle: {
+        borderColor: 'rgba(0, 21, 41, 0.4)',
+        borderWidth: 2
+      },
+      label: {
+        show: true,
+        position: 'outside',
+        formatter: '{b}\n{d}%',
+        fontSize: 12,
+        color: '#fff',
+        lineHeight: 16,
+        alignTo: 'edge',
+        edgeDistance: '15%',
+        distanceToLabelLine: 10,
+        overflow: 'none'
+      },
+      labelLayout: {
+        hideOverlap: false,
+        moveOverlap: 'shiftY'
+      },
+      labelLine: {
+        show: true,
+        length: 25,
+        length2: 50,
+        minTurnAngle: 90,
+        smooth: 0.2,
+        lineStyle: {
+          width: 1.5,
+          type: 'solid'
+        }
+      },
+      data: [
+        { 
+          value: 20, 
+          name: '饮食',
+          itemStyle: { color: '#FF9F43' },
+          labelLine: { lineStyle: { color: '#FF9F43' } }
+        },
+        { 
+          value: 20, 
+          name: '康复',
+          itemStyle: { color: '#FFD93D' },
+          labelLine: { lineStyle: { color: '#FFD93D' } }
+        },
+        { 
+          value: 10, 
+          name: '助行',
+          itemStyle: { color: '#4ECDC4' },
+          labelLine: { lineStyle: { color: '#4ECDC4' } }
+        },
+        { 
+          value: 15, 
+          name: '药品',
+          itemStyle: { color: '#45B7D1' },
+          labelLine: { lineStyle: { color: '#45B7D1' } }
+        },
+        { 
+          value: 20, 
+          name: '清洁',
+          itemStyle: { color: '#6C5CE7' },
+          labelLine: { lineStyle: { color: '#6C5CE7' } }
+        },
+        { 
+          value: 15, 
+          name: '医疗',
+          itemStyle: { color: '#FF6B6B' },
+          labelLine: { lineStyle: { color: '#FF6B6B' } }
+        }
+      ]
+    }]
+  }
+  homeCareChart.setOption(homeCareOption)
+
+  // 入住趋势分析
+  const communityCareChart = echarts.init(document.getElementById('community-care-chart'))
+  const communityCareOption = {
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow'
+      },
+      backgroundColor: 'rgba(0, 21, 41, 0.9)',
+      borderColor: 'rgba(24, 144, 255, 0.3)',
+      textStyle: { color: '#fff' }
+    },
+    grid: {
+      top: '3%',
+      left: '8%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    yAxis: {
+      type: 'category',
+      data: ['1月', '2月', '3月', '4月', '5月'],
+      axisLine: {
+        show: true,
+        lineStyle: { color: 'rgba(255, 255, 255, 0.3)' }
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        color: 'rgba(255, 255, 255, 0.65)',
+        fontSize: 12,
+        margin: 16
+      }
+    },
+    xAxis: {
+      type: 'value',
+      max: 250,
+      axisLine: {
+        show: true,
+        lineStyle: { color: 'rgba(255, 255, 255, 0.3)' }
+      },
+      splitLine: {
+        show: true,
+        lineStyle: { 
+          color: 'rgba(255, 255, 255, 0.1)',
+          type: 'dashed'
+        }
+      },
+      axisLabel: {
+        color: 'rgba(255, 255, 255, 0.65)',
+        fontSize: 12
+      }
+    },
+    series: [
+      {
+        name: '新增入住',
+        type: 'bar',
+        barWidth: 12,
+        barGap: '0%',
+        barCategoryGap: '50%',
+        itemStyle: {
+          color: '#FF6B6B',
+          borderRadius: [0, 4, 4, 0]
+        },
+        data: [10, 20, 40, 25, 30]
+      },
+      {
+        name: '离开人数',
+        type: 'bar',
+        barWidth: 12,
+        barGap: '0%',
+        barCategoryGap: '50%',
+        itemStyle: {
+          color: '#FFD93D',
+          borderRadius: [0, 4, 4, 0]
+        },
+        data: [35, 30, 20, 35, 40]
+      },
+      {
+        name: '现有人数',
+        type: 'bar',
+        barWidth: 12,
+        barGap: '0%',
+        barCategoryGap: '50%',
+        itemStyle: {
+          color: '#4ECDC4',
+          borderRadius: [0, 4, 4, 0]
+        },
+        data: [235, 225, 245, 240, 230]
+      }
+    ]
+  }
+  communityCareChart.setOption(communityCareOption)
+
+  // 健康状况分析
+  const institutionCareChart = echarts.init(document.getElementById('institution-care-chart'))
+  const institutionCareOption = {
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'item',
+      formatter: '{b}: {d}%',
+      backgroundColor: 'rgba(0, 21, 41, 0.9)',
+      borderColor: 'rgba(24, 144, 255, 0.3)',
+      textStyle: { color: '#fff' }
+    },
+    legend: {
+      orient: 'horizontal',
+      bottom: '0',
+      left: 'center',
+      itemGap: 15,
+      itemWidth: 15,
+      itemHeight: 10,
+      textStyle: {
+        color: 'rgba(255, 255, 255, 0.65)',
+        fontSize: 14
+      }
+    },
+    color: ['#4ECDC4', '#FFD93D', '#45B7D1', '#FFB156', '#FF6B6B'],
+    series: [{
+      type: 'pie',
+      roseType: 'radius',
+      radius: ['20%', '55%'],
+      center: ['50%', '42%'],
+      itemStyle: {
+        borderColor: 'rgba(0, 21, 41, 0.4)',
+        borderWidth: 2
+      },
+      label: {
+        show: true,
+        position: 'outside',
+        formatter: '{b}\n{d}%',
+        fontSize: 12,
+        color: '#fff',
+        lineHeight: 16,
+        alignTo: 'edge',
+        edgeDistance: '15%',
+        distanceToLabelLine: 10,
+        overflow: 'none'
+      },
+      labelLayout: {
+        hideOverlap: false,
+        moveOverlap: 'shiftY'
+      },
+      labelLine: {
+        show: true,
+        length: 25,
+        length2: 50,
+        minTurnAngle: 90,
+        smooth: 0.2,
+        lineStyle: {
+          width: 1.5,
+          type: 'solid'
+        }
+      },
+      data: [
+        { 
+          value: 30, 
+          name: '高血压',
+          itemStyle: { color: '#4ECDC4' },
+          labelLine: { lineStyle: { color: '#4ECDC4' } }
+        },
+        { 
+          value: 25, 
+          name: '糖尿病',
+          itemStyle: { color: '#FFD93D' },
+          labelLine: { lineStyle: { color: '#FFD93D' } }
+        },
+        { 
+          value: 20, 
+          name: '冠心病',
+          itemStyle: { color: '#45B7D1' },
+          labelLine: { lineStyle: { color: '#45B7D1' } }
+        },
+        { 
+          value: 15, 
+          name: '心机衰竭',
+          itemStyle: { color: '#FFB156' },
+          labelLine: { lineStyle: { color: '#FFB156' } }
+        },
+        { 
+          value: 10, 
+          name: '心绞痛',
+          itemStyle: { color: '#FF6B6B' },
+          labelLine: { lineStyle: { color: '#FF6B6B' } }
+        }
+      ],
+      emphasis: {
+        scale: true,
+        scaleSize: 10,
+        itemStyle: {
+          shadowBlur: 10,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        },
+        labelLine: {
+          lineStyle: {
+            width: 3
+          }
+        }
+      }
+    }]
+  }
+  institutionCareChart.setOption(institutionCareOption)
+}
+
 onMounted(() => {
   updateDateTime()
   setInterval(updateDateTime, 1000)
-  initMap()
-  initAgeChart()
-  initCareCharts()
+
+  // 确保DOM完全加载后再初始化图表
+  nextTick(() => {
+    try {
+      // 初始化地图
+      const mapChart = echarts.init(document.getElementById('map'))
+      if (mapChart) {
+        initMap()
+        console.log('Map chart initialized')
+      }
+
+      // 初始化年龄分布图
+      const ageChart = echarts.init(document.getElementById('age-chart'))
+      if (ageChart) {
+        initAgeChart()
+        console.log('Age chart initialized')
+      }
+
+      // 初始化底部三个图表
+      const homeCareChart = echarts.init(document.getElementById('home-care-chart'))
+      const communityCareChart = echarts.init(document.getElementById('community-care-chart'))
+      const institutionCareChart = echarts.init(document.getElementById('institution-care-chart'))
+
+      if (homeCareChart && communityCareChart && institutionCareChart) {
+        initCareCharts()
+        console.log('Care charts initialized')
+      }
+
+      // 监听窗口大小变化
+      window.addEventListener('resize', () => {
+        mapChart?.resize()
+        ageChart?.resize()
+        homeCareChart?.resize()
+        communityCareChart?.resize()
+        institutionCareChart?.resize()
+      })
+    } catch (error) {
+      console.error('Error initializing charts:', error)
+    }
+  })
 })
 </script>
 
 <style scoped>
 .dashboard {
-  min-height: 100vh;
   width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #000B1C;
   color: #fff;
-  background-image: radial-gradient(circle at 50% 50%, rgba(24, 144, 255, 0.1) 0%, transparent 80%);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .dashboard-header {
   height: 60px;
   padding: 0 20px;
-  background: #001529;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .header-left {
@@ -542,11 +752,7 @@ onMounted(() => {
 }
 
 .dashboard-title {
-  font-size: 20px;
-  font-weight: 500;
-  color: #fff;
-  margin: 0;
-  white-space: nowrap;
+  font-size: 1.25rem;
 }
 
 .header-nav {
@@ -557,7 +763,7 @@ onMounted(() => {
 .nav-item {
   color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 0 4px;
   position: relative;
   transition: color 0.3s;
@@ -575,7 +781,6 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 2px;
-  background: #1890FF;
 }
 
 .header-right {
@@ -587,7 +792,7 @@ onMounted(() => {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   color: rgba(255, 255, 255, 0.65);
   font-size: 14px;
 }
@@ -616,19 +821,21 @@ onMounted(() => {
 
 .dashboard-main {
   flex: 1;
-  padding: 20px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px;
+  min-height: 0;
 }
 
 .dashboard-top {
-  /* min-height: 120px; */
-  background: rgba(1, 27, 68, 0.7);
+  height: 60px;
   border-radius: 8px;
   padding: 8px;
-  border: 1px solid rgba(24, 144, 255, 0.3);
+  background-image: url('src/assets/images/head_bg.png');
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
 }
 
 .top-content {
@@ -642,28 +849,20 @@ onMounted(() => {
 .info-row {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
+  height: 100%;
   padding: 8px 16px;
 }
 
-.time-text {
+.datetime-text {
   color: #fff;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
-}
-
-.weather-icon {
-  font-size: 28px;
-}
-
-.weather-details {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
 }
 
 .top-left {
   position: absolute;
+   height: 100%;
   left: 0;
 }
 
@@ -676,13 +875,13 @@ onMounted(() => {
 
 .section-title {
   color: #fff;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 400;
   margin: 0;
   text-align: center;
   text-shadow: 0 0 10px rgba(24, 144, 255, 0.5),
-               0 0 20px rgba(24, 144, 255, 0.3),
-               0 0 30px rgba(24, 144, 255, 0.1);
+    0 0 20px rgba(24, 144, 255, 0.3),
+    0 0 30px rgba(24, 144, 255, 0.1);
   position: relative;
   padding: 0 20px;
 }
@@ -694,128 +893,119 @@ onMounted(() => {
   top: 50%;
   width: 30px;
   height: 2px;
-  background: linear-gradient(90deg, rgba(24, 144, 255, 0.8), transparent);
   transform: translateY(-50%);
 }
 
-.section-title::before {
-  right: 100%;
-}
-
-.section-title::after {
-  left: 100%;
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.info-row {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 8px 16px;
-}
-
-.time-display {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.time-text {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.date-text {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
-}
-
-.weather-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-left: 1px solid rgba(24, 144, 255, 0.2);
-  padding-left: 24px;
-}
-
-.weather-icon {
-  font-size: 32px;
-}
-
-.weather-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.weather-text {
-  color: #fff;
-  font-size: 16px;
-}
-
-.weather-wind {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
-}
-
-.top-center {
-  position: static;
-  transform: none;
-}
-
-.section-title {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0;
-  text-align: center;
-}
-
-.dashboard-middle {
+.dashboard-middle,
+.dashboard-bottom {
   flex: 1;
-  min-height: 400px;
-  background: rgba(1, 27, 68, 0.7);
+  min-height: 0;
   border-radius: 8px;
-  padding: 16px;
   display: flex;
-  gap: 16px;
+  gap: 20px;
+  padding: 0 20px;
 }
 
 .middle-left,
 .middle-center,
-.middle-right {
-  background: rgba(1, 27, 68, 0.5);
+.middle-right,
+.bottom-left,
+.bottom-center,
+.bottom-right {
   border-radius: 4px;
-  padding: 16px;
   border: 1px solid rgba(24, 144, 255, 0.2);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.middle-left {
+.middle-left,
+.bottom-left {
   width: 25%;
+  overflow-y: auto;
+  /* 添加滚动条自定义样式 */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(24, 144, 255, 0.3) rgba(0, 21, 41, 0.2);
 }
 
-.middle-center {
+.middle-center{
+   padding: 0;
+   border: none;
+}
+
+/* 自定义滚动条样式 - Webkit浏览器 */
+.middle-left::-webkit-scrollbar {
+  width: 6px;
+}
+
+.middle-left::-webkit-scrollbar-track {
+  background: rgba(0, 21, 41, 0.2);
+  border-radius: 3px;
+}
+
+.middle-left::-webkit-scrollbar-thumb {
+  background: rgba(24, 144, 255, 0.3);
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.middle-left::-webkit-scrollbar-thumb:hover {
+  background: rgba(24, 144, 255, 0.5);
+}
+
+/* 确保内容区域有合适的内边距，避免滚动条遮挡内容 */
+.data-overview {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 12px;
+  padding-right: 16px;
+}
+
+/* 调整内部元素间距，使其更紧凑 */
+.total-elderly {
+  margin-bottom: 20px;
+}
+
+.age-groups {
+  margin-bottom: 20px;
+}
+
+.stats-grid {
+  margin-bottom: 12px;
+}
+
+.middle-center,
+.bottom-center {
   width: 50%;
 }
 
-.middle-right {
+.middle-right,
+.bottom-right {
   width: 25%;
 }
 
 .panel-title {
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
-  margin: 0 0 12px 0;
-  padding-left: 12px;
-  border-left: 3px solid #1890FF;
+  margin: 0 0 16px 0;
+  padding-left: 30px;
+  text-align: left;
+  flex-shrink: 0;
+  height: 20px;
+  line-height: 20px;
 }
 
 .data-overview {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
+  gap: 10px;
   padding: 12px;
 }
 
@@ -832,163 +1022,58 @@ onMounted(() => {
 
 .age-groups {
   display: flex;
-  flex-direction: column;
   gap: 8px;
-  padding: 12px 0;
-  border-top: 1px solid rgba(24, 144, 255, 0.2);
-  border-bottom: 1px solid rgba(24, 144, 255, 0.2);
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px 16px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .stats-item {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  justify-content: center;
+  text-align: center;
 }
 
 .stats-label {
   color: rgba(255, 255, 255, 0.65);
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .stats-value {
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
+  border: 1px solid rgba(24, 144, 255, 0.5);
 }
 
 .map-container,
-.age-chart {
-  height: calc(100% - 20px);
+.pie-chart,
+.care-chart {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.dashboard-bottom {
-  min-height: 300px;
-  background: rgba(1, 27, 68, 0.7);
-  border-radius: 8px;
-  padding: 12px;
-  border: 1px solid rgba(24, 144, 255, 0.3);
-}
-
-.top-content {
-  display: flex;
-  align-items: center;
-  position: relative;
-  height: 48px;
-  justify-content: center;
-}
-
-.info-row {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 8px 16px;
-}
-
-.time-text {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.weather-icon {
-  font-size: 24px;
-}
-
-.weather-details {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.top-left {
-  position: absolute;
-  left: 0;
-}
-
-.top-center {
   flex: 1;
+  min-height: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background: transparent;
 }
 
-.section-title {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0;
-  text-align: center;
-}
-
-.dashboard-middle {
-  flex: 1;
-  min-height: 400px;
-  background: rgba(1, 27, 68, 0.7);
-  border-radius: 8px;
-  padding: 16px;
-  display: flex;
-  gap: 16px;
-}
-
-.middle-left,
-.middle-center,
-.middle-right {
-  background: rgba(1, 27, 68, 0.5);
-  border-radius: 4px;
-  padding: 16px;
-  border: 1px solid rgba(24, 144, 255, 0.2);
-}
-
-
-
-.panel-title {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0 0 16px 0;
-  padding-left: 12px;
-  border-left: 3px solid #1890FF;
-}
-
-.data-overview {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 16px;
-}
-
-.total-elderly {
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-.total-label {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 16px;
-  margin-bottom: 16px;
+.care-chart {
+  height: calc(100% - 36px) !important;
 }
 
 .total-value {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 20px;
 }
 
-.digit-box {
-  background: rgba(24, 144, 255, 0.2);
-  border: 1px solid rgba(24, 144, 255, 0.3);
+.total-value .digit-box {
   color: #fff;
   font-size: 28px;
   font-weight: 500;
@@ -998,28 +1083,23 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-}
-
-.comma {
-  color: #fff;
-  font-size: 28px;
-  font-weight: 500;
-  margin: 0 -2px;
+  background-image: url('src/assets/images/num_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .age-groups {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px 0;
-  border-top: 1px solid rgba(24, 144, 255, 0.2);
-  border-bottom: 1px solid rgba(24, 144, 255, 0.2);
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 
 .age-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .age-label {
@@ -1028,15 +1108,35 @@ onMounted(() => {
 }
 
 .age-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   font-size: 16px;
   font-weight: 500;
+  gap: 10px;
+}
+
+.age-value .digit-box {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  width: 18px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-image: url('src/assets/images/num_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px 24px;
+  grid-template-columns: 100px 100px;
+  gap: 20px 100px;
 }
 
 .stats-item {
@@ -1056,40 +1156,45 @@ onMounted(() => {
   font-weight: 500;
 }
 
-.map-container,
-.age-chart {
-  height: calc(100% - 20px);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.45);
+/* 确保图表容器能够自适应 */
+@media screen and (max-height: 900px) {
+  .dashboard-header {
+    height: 50px;
+  }
+  
+  .dashboard-top {
+    height: 50px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .panel-title {
+    margin: 0 0 8px 0;
+  }
+  
+  .data-overview {
+    gap: 8px;
+  }
 }
 
-.dashboard-bottom {
-  height: 300px;
-  background: rgba(1, 27, 68, 0.7);
-  border-radius: 8px;
-  padding: 8px;
-  border: 1px solid rgba(24, 144, 255, 0.3);
-}
-
-.bottom-charts {
-  display: flex;
-  gap: 12px;
-  height: 100%;
-}
-
-.chart-item {
-  flex: 1;
-  background: rgba(1, 27, 68, 0.5);
-  border-radius: 4px;
-  padding: 12px;
-  border: 1px solid rgba(24, 144, 255, 0.2);
-}
-
-.care-chart {
-  height: calc(100% - 32px);
-  width: 100%;
+@media screen and (max-height: 700px) {
+  .dashboard-header {
+    height: 40px;
+  }
+  
+  .dashboard-top {
+    height: 40px;
+  }
+  
+  .dashboard-main {
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+  }
 }
 </style>
